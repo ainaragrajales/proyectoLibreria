@@ -107,10 +107,14 @@ public class Main {
 
                         switch (opcionInvent) {
                             case 1:
-
+                                System.out.println("\n");
+                                crearInventario.crear();
+                                System.out.println("\n");
                                 break;
                             case 2:
-
+                                System.out.println("\n");
+                                mostrarInventario.mostrar();
+                                System.out.println("\n");
                                 break;
                             case 3:
 
