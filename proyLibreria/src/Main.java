@@ -38,14 +38,13 @@ public class Main {
                     //System.out.println("Opción Libros.");
                     int opcionLib = 0;
 
-                    while (opcionLib != 5) {
+                    while (opcionLib != 4) {
 
                         System.out.println("Menú libros:\n" +
-                                "       1.- Crear fichero libros.\n" +
-                                "       2.- Mostrar libros.\n" +
-                                "       3.- Buscar libro por título.\n" +
-                                "       4.- Añadir un libro.\n" +
-                                "       5.- Volver al menú principal.\n\n" +
+                                "       1.- Mostrar libros.\n" +
+                                "       2.- Buscar libro por título.\n" +
+                                "       3.- Añadir un libro.\n" +
+                                "       4.- Volver al menú principal.\n\n" +
                                 "Opción:");
                         try {
                             opcionLib = Integer.parseInt(br.readLine());
@@ -59,23 +58,53 @@ public class Main {
                         switch (opcionLib) {
                             case 1:
                                 System.out.println("\n");
-                                insertLibros.insert();
+                                //mostrarLibros.mostrar();
+                                mostrarLibros.open();
                                 System.out.println("\n");
                                 break;
                             case 2:
                                 System.out.println("\n");
-                                mostrarLibros.mostrar();
-                                System.out.println("\n");
-                                break;
-                            case 3:
-                                System.out.println("\n");
                                 buscarLibr.buscPorTitulo();
                                 System.out.println("\n");
                                 break;
-                            case 4:
+                            case 3:
+                                String titulo, autor, formato, genero, continuar;
+                                boolean cont = true;
 
+                                int cod;
+                                double precio;
+                                System.out.println("\n");
+                                try {
+                                    while (cont){
+                                        System.out.println("Introduce el codigo del libro");
+                                        cod = Integer.parseInt(br.readLine());
+                                        System.out.println("Introduce el titulo del libro");
+                                        titulo = br.readLine();
+                                        System.out.println("Introduce el nombre del autor.");
+                                        autor = br.readLine();
+                                        System.out.println("Introduce el formato del libro");
+                                        formato = br.readLine();
+                                        System.out.println("Introduce el género del libro");
+                                        genero = br.readLine();
+                                        System.out.println("Introduce el precio del libro.");
+                                        precio = Double.parseDouble(br.readLine());
+                                        insertLibros.insertar(cod, titulo, autor, formato, genero, precio);
+                                        System.out.println("¿Quieres añadir otro libro? true/false");
+                                        continuar = br.readLine();
+                                        if (continuar.equalsIgnoreCase("true")){
+                                            cont = true;
+                                        } else {
+                                            cont = false;
+                                        }
+                                    }
+
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                                System.out.println("\n");
                                 break;
-                            case 5:
+                            case 4:
                                 System.out.println("\nVolviendo al menú principal.\n");
                                 break;
                             default:
@@ -117,12 +146,11 @@ public class Main {
                                 System.out.println("\n");
                                 break;
                             case 3:
-
+                                System.out.println("\n");
+                                //mostrarInventario.mostrar();
+                                System.out.println("\n");
                                 break;
                             case 4:
-
-                                break;
-                            case 5:
                                 System.out.println("\nVolviendo al menú principal.\n");
                                 break;
                             default:

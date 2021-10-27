@@ -10,7 +10,7 @@ public class mostrarInventario {
         try {
             RandomAccessFile frandom = new RandomAccessFile("./ficheros/listaInventario.dat", "r");
             int cod, cantidad;
-            Double precio;
+            double precio;
             int posicion = 0;
             int num = 0;
 

@@ -1,33 +1,56 @@
 import java.io.*;
 
+class Appendable_objectoutputstream extends ObjectOutputStream{
+
+    public Appendable_objectoutputstream(OutputStream out) throws IOException {
+        super(out);
+    }
+    @Override
+    protected void writeStreamHeader() throws IOException {
+        // TODO Auto-generated method stub
+    }
+}
+
+
 public class insertLibros {
-    public static void insert(){
+
+    public static boolean insertar(int codigo, String titulo, String autor, String formato, String genero, double precio){
+
+        Libro libro1 = new Libro(codigo, titulo, autor, formato, genero, precio);
+
+        File file = new File("./proyLibreria/ficheros/listaLibros.dat");
+
+        boolean append = file.exists();
+
+        FileOutputStream fOut;
+
+        ObjectOutputStream oOut;
         try {
 
-            File fichero = new File("./ficheros/listaLibros.dat");
-            FileOutputStream fileout = new FileOutputStream(fichero);
-            ObjectOutputStream objectOS = new ObjectOutputStream(fileout);
+            if (append) {
 
-            //primero crearlos desde programa, más adelante pedir al usuario que meta los datos del libr
-            Libro l1 = new Libro(12045087, "Dune", "Frank Herbert", "libro bolsillo", "ciencia ficción", 12.5);
-            Libro l3 = new Libro(12321378, "Moon called", "Patricia Briggs", "libro bolsillo", "ciencia ficción", 8.75);
-            Libro l2 = new Libro(74032998, "The Martian", "Andy Weir", "libro bolsillo", "ciencia ficción", 10.4);
+                fOut = new FileOutputStream(file, true);
+                oOut = new Appendable_objectoutputstream(fOut);
 
-            objectOS.writeObject(l1);
-            objectOS.writeObject(l3);
-            objectOS.writeObject(l2);
+            } else {
 
-            objectOS.close();
+                fOut = new FileOutputStream(file, true);
+                oOut = new ObjectOutputStream(fOut);
 
+            }
 
-        } catch (FileNotFoundException fn) {
+            oOut.writeObject(libro1);
+            oOut.flush();
+            oOut.close();
+            fOut.close();
 
-            System.out.println("No se encuentra el fichero");
-
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return false;
         } catch (IOException e) {
-
-            System.out.println("Error");
-
+            e.printStackTrace();
+            return false;
         }
+        return true;
     }
 }
