@@ -2,16 +2,6 @@ import java.io.*;
 
 public class Main {
 
-    //conexiones
-   // public RandomAccessFile frandom;// = new RandomAccessFile("./ficheros/listaInventario.dat", "rw");
-
-    //public File fichero;// = new File("./ficheros/listaLibros.dat");
-    //public FileOutputStream fileout;// = new FileOutputStream(fichero);
-    //public ObjectOutputStream objectOS;// = new ObjectOutputStream(fileout);
-
-    //private static   ObjectInputStream objectIS;//objectIS = new ObjectInputStream(filein);
-    //public FileInputStream filein;// = new FileInputStream(fichero);
-
     public static void main(String[] args) {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -57,9 +47,19 @@ public class Main {
 
                         switch (opcionLib) {
                             case 1:
+                                String respuesta;
                                 System.out.println("\n");
                                 //mostrarLibros.mostrar();
                                 mostrarLibros.open();
+                                System.out.println("¿Quieres convertir en fichero XML la lista de libros? s/n");
+                                try {
+                                    respuesta = br.readLine();
+                                    if (respuesta.equalsIgnoreCase("s")){
+                                        ConvertirXML.convertirLibros();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                                 System.out.println("\n");
                                 break;
                             case 2:
