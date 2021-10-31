@@ -1,6 +1,5 @@
-package Clases;
-
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Libro implements Serializable {
 
@@ -10,6 +9,9 @@ public class Libro implements Serializable {
     private String formato;
     private String genero;
     private double precio;
+
+    public Libro() {
+    }
 
     //constructor
     public Libro(int codigo, String titulo, String autor, String formato, String genero, double precio) {
@@ -71,7 +73,21 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "Clases.Libro -----> titulado " + titulo + " del autor " + autor +
-                " en " + formato + " del  genero " + genero + " cuesta " + precio;
+        return "--->  " + codigo + "    " + titulo + "    " + autor +
+                    "    " + formato + "   " + genero + "   " + precio;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Libro libro = (Libro) o;
+        return codigo == libro.codigo && Double.compare(libro.precio, precio) == 0 && Objects.equals(titulo, libro.titulo) && Objects.equals(autor, libro.autor) && Objects.equals(formato, libro.formato) && Objects.equals(genero, libro.genero);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo, titulo, autor, formato, genero, precio);
     }
 }

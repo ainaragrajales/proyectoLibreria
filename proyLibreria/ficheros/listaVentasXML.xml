@@ -1,0 +1,14 @@
+<ListaVentasLibreria>
+  <lista>
+    <DatosVenta>
+      <codigo>1</codigo>
+      <codLibro>23003222</codLibro>
+      <tituloLibro>Hyde and Seek</tituloLibro>
+      <cantidad>1</cantidad>
+      <precio>3.0</precio>
+      <total>3.0</total>
+      <fecha>21-03-1980</fecha>
+      <hora>12:34:12</hora>
+    </DatosVenta>
+  </lista>
+</ListaVentasLibreria>

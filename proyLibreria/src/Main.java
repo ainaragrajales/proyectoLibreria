@@ -1,18 +1,11 @@
-import Inventario.addInventario;
-import Inventario.modificarInventario;
-import Inventario.mostrarInventario;
-import Libros.buscarLibr;
-import Libros.insertLibros;
-import Libros.mostrarLibros;
-
 import java.io.*;
 
-public class Main {
 
+public class Main {
     public static void main(String[] args) {
         String menuPrincipal = "Menú:\n" +
                 "       1.- Libros.\n" +
-                "       2.- Clases.Inventario.\n" +
+                "       2.- Inventario.\n" +
                 "       3.- Ventas.\n" +
                 "       4.- Salir.\n" +
                 "Opción:";
@@ -22,7 +15,7 @@ public class Main {
                 "       3.- Añadir un libro.\n" +
                 "       4.- Salir.\n" +
                 "Opción:";
-        String menuInventario = "Menú Clases.Inventario:\n" +
+        String menuInventario = "Menú Inventario:\n" +
                 "       1.- Añadir en el inventario.\n" +
                 "       2.- Mostrar el inventario.\n" +
                 "       3.- Modificar inventario.\n" +
@@ -31,10 +24,10 @@ public class Main {
         String menuVentas = "Menú: Ventas\n" +
                 "       1.- Crear fichero ventas.\n" +
                 "       2.- Mostrar ventas.\n" +
-                "       3.- Añadir ventas.\n" +
+                "       3.- Mostrar ventas de un libro específico.\n" +
                 "       4.- Salir.\n" +
                 "Opcióm:";
-
+        String respuesta;
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int opcionPrinc = 0;
@@ -69,9 +62,8 @@ public class Main {
 
                         switch (opcionLib) {
                             case 1:
-                                String respuesta;
                                 System.out.println("\n");
-                                //Libros.mostrarLibros.mostrar();
+                                //mostrarLibros.mostrar();
                                 mostrarLibros.open();
                                 System.out.println("¿Quieres convertir en fichero XML la lista de libros? s/n");
                                 try {
@@ -136,7 +128,7 @@ public class Main {
                     }
                     break;
                 case 2:
-                    //System.out.println("Opción Clases.Inventario.");
+                    //System.out.println("Opción Inventario.");
                     int opcionInvent = 0;
 
                     while (opcionInvent != 4) {
@@ -154,7 +146,7 @@ public class Main {
                         switch (opcionInvent) {
                             case 1:
                                 System.out.println("\n");
-                                //Clases.Inventario.crearInventario.crear();
+                                //crearInventario.crear();
                                 addInventario.add();
                                 System.out.println("\n");
                                 break;
@@ -195,18 +187,30 @@ public class Main {
 
                         switch (opcionVenta) {
                             case 1:
-
+                                System.out.println("\n");
+                                crearVentas.insertar();
+                                System.out.println("\n");
                                 break;
                             case 2:
-
+                                System.out.println("\n");
+                                mostrarVentas.mostrar();
+                                System.out.println("¿Quieres convertir en fichero XML la lista de ventas? s/n");
+                                try {
+                                    respuesta = br.readLine();
+                                    if (respuesta.equalsIgnoreCase("s")){
+                                        ConvertirXML.convertirVentas();
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                System.out.println("\n");
                                 break;
                             case 3:
-
+                                System.out.println("\n");
+                                mostrarVentasLibro.mostrarVentasLibroEspecifico();
+                                System.out.println("\n");
                                 break;
                             case 4:
-
-                                break;
-                            case 5:
                                 System.out.println("\nVolviendo al menú principal.\n");
                                 break;
                             default:

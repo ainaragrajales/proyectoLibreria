@@ -31,14 +31,13 @@ public class insertLibros {
         ObjectOutputStream oOut;
         try {
 
+            fOut = new FileOutputStream(file, true);
             if (append) {
 
-                fOut = new FileOutputStream(file, true);
                 oOut = new Appendable_objectoutputstream(fOut);
 
             } else {
 
-                fOut = new FileOutputStream(file, true);
                 oOut = new ObjectOutputStream(fOut);
 
             }

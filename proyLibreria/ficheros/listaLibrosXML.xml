@@ -1,34 +1,34 @@
 <ListaLibrosLibreria>
   <DatosLibro>
-    <codigo>12045087</codigo>
-    <titulo>Dune</titulo>
-    <autor>Frank Herbert</autor>
-    <formato>libro bolsillo</formato>
-    <genero>ciencia ficción</genero>
-    <precio>12.5</precio>
-  </DatosLibro>
-  <DatosLibro>
-    <codigo>12321378</codigo>
-    <titulo>Moon called</titulo>
-    <autor>Patricia Briggs</autor>
-    <formato>libro bolsillo</formato>
-    <genero>ciencia ficción</genero>
-    <precio>8.75</precio>
-  </DatosLibro>
-  <DatosLibro>
-    <codigo>74032998</codigo>
-    <titulo>The Martian</titulo>
-    <autor>Andy Weir</autor>
-    <formato>libro bolsillo</formato>
-    <genero>ciencia ficción</genero>
-    <precio>10.4</precio>
-  </DatosLibro>
-  <DatosLibro>
-    <codigo>123</codigo>
-    <titulo>Hyde and Seek</titulo>
-    <autor>Layla Frost</autor>
+    <codigo>12121212</codigo>
+    <titulo>Until April</titulo>
+    <autor>Aurora Rose Reynolds</autor>
     <formato>e-book</formato>
     <genero>romance</genero>
-    <precio>5.0</precio>
+    <precio>3.0</precio>
+  </DatosLibro>
+  <DatosLibro>
+    <codigo>23003222</codigo>
+    <titulo>Hyde and Seek</titulo>
+    <autor>Layla Frost</autor>
+    <formato>libro bolsillo</formato>
+    <genero>romance</genero>
+    <precio>12.0</precio>
+  </DatosLibro>
+  <DatosLibro>
+    <codigo>45097809</codigo>
+    <titulo>Moon called</titulo>
+    <autor>Patricia Briggs</autor>
+    <formato>tapa dura</formato>
+    <genero>urban fantasy</genero>
+    <precio>23.0</precio>
+  </DatosLibro>
+  <DatosLibro>
+    <codigo>34078934</codigo>
+    <titulo>True blue</titulo>
+    <autor>Melissa Foster</autor>
+    <formato>e-book</formato>
+    <genero>4.45</genero>
+    <precio>4.45</precio>
   </DatosLibro>
 </ListaLibrosLibreria>
