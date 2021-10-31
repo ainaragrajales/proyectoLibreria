@@ -56,7 +56,7 @@ public class mostrarVentas {
                 }
                 codigo = ventas.get(codSelec).getCodigo();
             } catch (Exception e) {
-                System.out.println("Error");
+                //System.out.println("Error");
             }
             fin.close();
             oIn.close();

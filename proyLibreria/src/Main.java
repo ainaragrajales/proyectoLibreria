@@ -63,9 +63,8 @@ public class Main {
                         switch (opcionLib) {
                             case 1:
                                 System.out.println("\n");
-                                //mostrarLibros.mostrar();
                                 mostrarLibros.open();
-                                System.out.println("¿Quieres convertir en fichero XML la lista de libros? s/n");
+                                System.out.println("\n¿Quieres convertir en fichero XML la lista de libros? s/n");
                                 try {
                                     respuesta = br.readLine();
                                     if (respuesta.equalsIgnoreCase("s")){

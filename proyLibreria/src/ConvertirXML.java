@@ -3,15 +3,6 @@ import com.thoughtworks.xstream.XStream;
 import java.io.*;
 
 public class ConvertirXML {
-
-    public static void main(String[] args) {
-        try {
-            convertirLibros();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void convertirLibros() throws IOException {
         File fichero = new File("./proyLibreria/ficheros/listaLibros.dat");
         FileInputStream filein = new FileInputStream(fichero);//crea el flujo de entrada

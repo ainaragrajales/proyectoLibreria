@@ -20,7 +20,7 @@ public class mostrarVentasLibro {
                     Venta u = (Venta) obj;
                     cod = u.getCodLibro();
                     if (cod == codLibroSelec){
-                        System.out.println(u);
+                        System.out.printf(" ---> %-4d%-10d%-20s%-10d%.2f€       %.2f€   %-12s%-12s\n", u.getCodigo(), u.getCodLibro(), u.getTituloLibro(), u.getCantidad(), u.getPrecio(), u.getTotal(), u.getFecha(), u.getHora());
                         hay = 1;
                     }
                 }

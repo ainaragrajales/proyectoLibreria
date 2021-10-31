@@ -33,6 +33,7 @@ public class mostrarLibros {
             // TODO Auto-generated catch block
             System.err.println("failed to read2 : " + e);
         }
+
         System.out.println("      Codigo    Titulo              Autor                         Formato             Genero            Precio\n\n" +
                 "------------------------------------------------------------------------------------------------------------------------------------\n");
         for (int i = 0; i < lista.size(); i++) {
@@ -104,18 +105,23 @@ public class mostrarLibros {
             FileInputStream fin = new FileInputStream(fileName);
             ObjectInputStream oIn = new ObjectInputStream(fin);
             try {
-                int n = 0;
+
                 while ((obj = oIn.readObject()) != null) {
                     Libro u = (Libro) obj;
-                    System.out.printf("%-2d   %16d%16s%16s%16s%16s%.2f € \n",n, u.getCodigo(), u.getTitulo(), u.getAutor(), u.getFormato(), u.getGenero(), u.getPrecio());
                     libros.add(u);
-                    n++;
+
                 }
             } catch (Exception e) {
                 //System.out.println("Error");
             }
             fin.close();
             oIn.close();
+            System.out.println("Pos     Codigo      Titulo                    Autor                         Formato           Genero            Precio\n\n" +
+                    "------------------------------------------------------------------------------------------------------------------------------------------\n");
+            for (int i = 0; i < libros.size(); i++) {
+                System.out.printf("%2s   %-16d%-25s%-30s%-18s%-18s%.2f € \n", i, libros.get(i).getCodigo(), libros.get(i).getTitulo(), libros.get(i).getAutor(), libros.get(i).getFormato(), libros.get(i).getGenero(), libros.get(i).getPrecio());
+
+            }
             System.out.println("\nEscribe la posicion del libro que quieres seleccionar:");
             selec = Integer.parseInt(br.readLine());
             libroSelec = libros.get(selec);
