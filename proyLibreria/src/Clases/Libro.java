@@ -1,3 +1,5 @@
+package Clases;
+
 import java.io.Serializable;
 
 public class Libro implements Serializable {
@@ -69,7 +71,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "Libro -----> titulado " + titulo + " del autor " + autor +
+        return "Clases.Libro -----> titulado " + titulo + " del autor " + autor +
                 " en " + formato + " del  genero " + genero + " cuesta " + precio;
     }
 }

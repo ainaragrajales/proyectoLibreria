@@ -1,3 +1,7 @@
+package Inventario;
+
+import Libros.mostrarLibros;
+
 import java.io.*;
 
 public class addInventario {

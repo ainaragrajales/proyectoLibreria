@@ -1,3 +1,5 @@
+import Clases.Libro;
+import Libros.ListaLibros;
 import com.thoughtworks.xstream.XStream;
 
 import java.io.*;

@@ -1,3 +1,10 @@
+import Inventario.addInventario;
+import Inventario.modificarInventario;
+import Inventario.mostrarInventario;
+import Libros.buscarLibr;
+import Libros.insertLibros;
+import Libros.mostrarLibros;
+
 import java.io.*;
 
 public class Main {
@@ -5,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         String menuPrincipal = "Menú:\n" +
                 "       1.- Libros.\n" +
-                "       2.- Inventario.\n" +
+                "       2.- Clases.Inventario.\n" +
                 "       3.- Ventas.\n" +
                 "       4.- Salir.\n" +
                 "Opción:";
@@ -15,7 +22,7 @@ public class Main {
                 "       3.- Añadir un libro.\n" +
                 "       4.- Salir.\n" +
                 "Opción:";
-        String menuInventario = "Menú Inventario:\n" +
+        String menuInventario = "Menú Clases.Inventario:\n" +
                 "       1.- Añadir en el inventario.\n" +
                 "       2.- Mostrar el inventario.\n" +
                 "       3.- Modificar inventario.\n" +
@@ -64,7 +71,7 @@ public class Main {
                             case 1:
                                 String respuesta;
                                 System.out.println("\n");
-                                //mostrarLibros.mostrar();
+                                //Libros.mostrarLibros.mostrar();
                                 mostrarLibros.open();
                                 System.out.println("¿Quieres convertir en fichero XML la lista de libros? s/n");
                                 try {
@@ -129,7 +136,7 @@ public class Main {
                     }
                     break;
                 case 2:
-                    //System.out.println("Opción Inventario.");
+                    //System.out.println("Opción Clases.Inventario.");
                     int opcionInvent = 0;
 
                     while (opcionInvent != 4) {
@@ -147,7 +154,7 @@ public class Main {
                         switch (opcionInvent) {
                             case 1:
                                 System.out.println("\n");
-                                //crearInventario.crear();
+                                //Clases.Inventario.crearInventario.crear();
                                 addInventario.add();
                                 System.out.println("\n");
                                 break;

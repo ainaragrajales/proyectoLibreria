@@ -1,3 +1,5 @@
+package Clases;
+
 import java.io.Serializable;
 
 public class Inventario implements Serializable {

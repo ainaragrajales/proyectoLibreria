@@ -1,3 +1,5 @@
+package Inventario;
+
 import java.io.*;
 
 public class modificarInventario {

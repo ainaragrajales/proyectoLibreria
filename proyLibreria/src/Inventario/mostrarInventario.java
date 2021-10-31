@@ -1,3 +1,5 @@
+package Inventario;
+
 import java.io.*;
 import java.net.Socket;
 

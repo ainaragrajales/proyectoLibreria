@@ -1,3 +1,7 @@
+package Libros;
+
+import Clases.Libro;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -69,7 +73,7 @@ public class mostrarLibros {
                 }
 
                 while (lista.get(codSelec) != null){
-                    System.out.println("Pos     Libro\n\n" +
+                    System.out.println("Pos     Clases.Libro\n\n" +
                             "-------------------------------------------------------------\n");
                     for (int i = 0; i < lista.size(); i++){
                         System.out.println(i + "  " + lista.get(i));
