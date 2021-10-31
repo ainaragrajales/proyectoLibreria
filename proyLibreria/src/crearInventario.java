@@ -10,7 +10,7 @@ public class crearInventario {
         double[] precios = {12.5, 10.4, 8.75};
 
         try {
-            RandomAccessFile frandom = new RandomAccessFile("./ficheros/listaInventario.dat", "rw");
+            RandomAccessFile frandom = new RandomAccessFile("./proyLibreria/ficheros/listaInventario.dat", "rw");
 
             //cada linea son 16bytes (codLib->entero 4 + cantidad->entero 4 + precio->doble 8)
             for (int i = 0; i < codigos.length; i++) {

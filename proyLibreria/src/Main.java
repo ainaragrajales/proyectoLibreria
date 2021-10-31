@@ -3,10 +3,30 @@ import java.io.*;
 public class Main {
 
     public static void main(String[] args) {
-        String menuPrincipal = "Menú: \n        1.- Libros.\n       2.- Inventario.\n      3.- Ventas.\n       4.- Salir.\nOpcióm:";
-        String menuLibros = "Menú Libros: \n        1.- Mostrar libros.\n       2.- Buscar libro por título.\n      3.- Añadir un libro.\n       4.- Salir.\nOpcióm:";
-        String menuInventario = "Menú Inventario: \n        1.- Crear fichero inventario.\n       2.- Mostrar inventario.\n      3.- Modificar inventario.\n       4.- Salir.\nOpcióm:";
-        String menuVentas = "Menú: Ventas \n        1.- Crear fichero ventas.\n       2.- Mostrar ventas.\n      3.- Añadir ventas.\n       4.- Salir.\nOpcióm:";
+        String menuPrincipal = "Menú:\n" +
+                "       1.- Libros.\n" +
+                "       2.- Inventario.\n" +
+                "       3.- Ventas.\n" +
+                "       4.- Salir.\n" +
+                "Opción:";
+        String menuLibros = "Menú Libros:\n" +
+                "       1.- Mostrar libros.\n" +
+                "       2.- Buscar libro por título.\n" +
+                "       3.- Añadir un libro.\n" +
+                "       4.- Salir.\n" +
+                "Opción:";
+        String menuInventario = "Menú Inventario:\n" +
+                "       1.- Añadir en el inventario.\n" +
+                "       2.- Mostrar el inventario.\n" +
+                "       3.- Modificar inventario.\n" +
+                "       4.- Salir.\n" +
+                "Opción:";
+        String menuVentas = "Menú: Ventas\n" +
+                "       1.- Crear fichero ventas.\n" +
+                "       2.- Mostrar ventas.\n" +
+                "       3.- Añadir ventas.\n" +
+                "       4.- Salir.\n" +
+                "Opcióm:";
 
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -127,7 +147,8 @@ public class Main {
                         switch (opcionInvent) {
                             case 1:
                                 System.out.println("\n");
-                                crearInventario.crear();
+                                //crearInventario.crear();
+                                addInventario.add();
                                 System.out.println("\n");
                                 break;
                             case 2:
@@ -137,7 +158,7 @@ public class Main {
                                 break;
                             case 3:
                                 System.out.println("\n");
-                                //mostrarInventario.mostrar();
+                                modificarInventario.modificar();
                                 System.out.println("\n");
                                 break;
                             case 4:
