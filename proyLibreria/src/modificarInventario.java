@@ -1,14 +1,13 @@
-package Inventario;
-
 import java.io.*;
 
 public class modificarInventario {
 
     public static void modificar(){
         try {
-            int mod = 0;
             int nuevaCant =0;
-            double nuevoPrecio = 0;
+            String  nuevaFechaMod = "";
+            String  nuevaHoraMod = "";
+            StringBuffer bufferFecha, bufferHora;
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             int pos = mostrarInventario.devolverNumInventario();
 
@@ -22,42 +21,29 @@ public class modificarInventario {
             int posicion;
 
 
-            posicion = (pos - 1)*16; //Porque cada linea de inventario ocupa 16 bytes
+            posicion = (pos - 1)*26; //Porque cada linea de inventario ocupa 26 bytes
 
             if (posicion >= file.length()){
                 System.out.println("NO EXISTE LA LINEA DE INVENTARIO");
             }
             else{ //Sí que existe o puede existir
-                while (mod!=-1) {
-                    System.out.println("¿Que datos quieres modificar?\n" +
-                            " 1 cantidad\n" +
-                            " 2 precio\n" +
-                            " 3 ambos.");
-                    mod = Integer.parseInt(br.readLine());
-                    if (mod == 1){
-                        System.out.println("Introduce la nueva cantidad:");
-                        nuevaCant = Integer.parseInt(br.readLine());
-                        file.seek(posicion+4);
-                        file.writeInt(nuevaCant);
-                    } else if (mod ==2){
-                        System.out.println("Introduce el nuevo precio:");
-                        nuevoPrecio = Double.parseDouble(br.readLine());
-                        file.seek(posicion+4+4);
-                        file.writeDouble(nuevoPrecio);
-                    } else if (mod == 3){
-                        System.out.println("Introduce la nueva cantidad:");
-                        nuevaCant = Integer.parseInt(br.readLine());
-                        file.seek(posicion+4);
-                        file.writeInt(nuevaCant);
+                System.out.println("Introduce la nueva cantidad:");
+                nuevaCant = Integer.parseInt(br.readLine());
 
-                        System.out.println("Introduce el nuevo precio:");
-                        nuevoPrecio = Double.parseDouble(br.readLine());
-                        file.seek(posicion+4+4);
-                        file.writeDouble(nuevoPrecio);
-                    } else {
-                        mod = -1;
-                    }
-                }
+                System.out.println("Introduce la fecha de modifcación:");
+                nuevaFechaMod = br.readLine();
+                bufferFecha = new StringBuffer(nuevaFechaMod);
+                bufferFecha.setLength(10);
+
+                System.out.println("Introduce la hora de modifcación:");
+                nuevaHoraMod = br.readLine();
+                bufferHora = new StringBuffer(nuevaHoraMod);
+                bufferHora.setLength(8);
+
+                file.seek(posicion+4);
+                file.writeInt(nuevaCant);
+                file.writeUTF(bufferFecha.toString());
+                file.writeUTF(bufferHora.toString());
             }
             file.close(); //Cerramos fichero
         } catch (IOException e) {

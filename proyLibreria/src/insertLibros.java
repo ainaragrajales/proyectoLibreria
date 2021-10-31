@@ -1,7 +1,3 @@
-package Libros;
-
-import Clases.Libro;
-
 import java.io.*;
 
 class Appendable_objectoutputstream extends ObjectOutputStream{

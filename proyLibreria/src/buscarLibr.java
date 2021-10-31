@@ -1,6 +1,4 @@
-package Libros;
 
-import Clases.Libro;
 
 import java.io.*;
 
@@ -14,7 +12,7 @@ public class buscarLibr {
 
 
         try {
-            File fichero = new File("./ficheros/listaLibros.dat");
+            File fichero = new File("./proyLibreria/ficheros/listaLibros.dat");
             FileInputStream filein = new FileInputStream(fichero);
             objectIS = new ObjectInputStream(filein);
 
@@ -26,7 +24,7 @@ public class buscarLibr {
                 Libro l1 = (Libro) objectIS.readObject();
 
 
-                if (l1.getTitulo().equalsIgnoreCase(titulo)) {
+                if (l1.getTitulo().contains(titulo)) {
                     System.out.println(l1);
 
                 }
@@ -59,10 +57,6 @@ public class buscarLibr {
                 e.printStackTrace();
             }
         }
-    }
-
-    public static void buscarPorCod(int cod){
-
     }
 }
 
