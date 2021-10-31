@@ -6,11 +6,14 @@ public class mostrarLibros {
 
         Object obj;
         String fileName = "./proyLibreria/ficheros/listaLibros.dat";
+        String fileName2 = "./ficheros/listaLibros.dat";
 
         try {
 
+
             FileInputStream fin = new FileInputStream(fileName);
             ObjectInputStream oIn = new ObjectInputStream(fin);
+
 
             try {
 

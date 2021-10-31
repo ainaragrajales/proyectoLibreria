@@ -43,4 +43,11 @@ public class ConvertirXML {
         }
     }
 
+    public static void convertirInventario(){
+
+    }
+
+    public static void convertirVentas(){
+
+    }
 }

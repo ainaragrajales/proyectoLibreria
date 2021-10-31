@@ -1,12 +1,12 @@
 import java.io.Serializable;
 
-public class Almacen implements Serializable {
+public class Inventario implements Serializable {
 
     private int cod_lib;
     private int cantidad;
     private double precio_lib;
 
-    public Almacen(int cod_lib, int cantidad, double precio_lib) {
+    public Inventario(int cod_lib, int cantidad, double precio_lib) {
         this.cod_lib = cod_lib;
         this.cantidad = cantidad;
         this.precio_lib = precio_lib;

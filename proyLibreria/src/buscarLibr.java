@@ -56,5 +56,9 @@ public class buscarLibr {
             }
         }
     }
+
+    public static void buscarPorCod(int cod){
+
+    }
 }
 

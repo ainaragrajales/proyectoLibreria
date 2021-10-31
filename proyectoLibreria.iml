@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/xstream-1.4.18/lib/xstream-1.4.18.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../drivers/xstream-1.4.18.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/xstream-1.4.18/lib/xstream/kxml2-min-2.3.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../drivers/xstream-1.4.18/lib/xstream/kxml2-min-2.3.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

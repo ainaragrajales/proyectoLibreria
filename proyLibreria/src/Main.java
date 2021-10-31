@@ -109,7 +109,7 @@ public class Main {
                     }
                     break;
                 case 2:
-                    //System.out.println("Opción Almacen.");
+                    //System.out.println("Opción Inventario.");
                     int opcionInvent = 0;
 
                     while (opcionInvent != 4) {
