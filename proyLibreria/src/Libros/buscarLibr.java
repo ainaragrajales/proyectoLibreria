@@ -1,3 +1,7 @@
+package Libros;
+
+import Clases.Libro;
+
 import java.io.*;
 
 public class buscarLibr {
