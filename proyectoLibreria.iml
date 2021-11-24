@@ -12,6 +12,7 @@
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../drivers/xstream-1.4.18.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../ad2104/drivers/XStream/xstream-1.4.18.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../drivers/xstream-1.4.18.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -22,6 +23,7 @@
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../../drivers/xstream-1.4.18/lib/xstream/kxml2-min-2.3.0.jar!/" />
           <root url="jar://$MODULE_DIR$/../../../ad2104/drivers/XStream/kxml2-min-2.3.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../drivers/xstream-1.4.18/lib/xstream/kxml2-min-2.3.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

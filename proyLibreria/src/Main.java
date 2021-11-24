@@ -71,7 +71,7 @@ public class Main {
                                         ConvertirXML.convertirLibros();
                                     }
                                 } catch (IOException e) {
-                                    e.printStackTrace();
+                                    System.out.println("\nError\n");
                                 }
                                 System.out.println("\n");
                                 break;
@@ -112,7 +112,7 @@ public class Main {
                                     }
 
                                 } catch (IOException e) {
-                                    e.printStackTrace();
+                                    System.out.println("\nError\n");
                                 }
 
                                 System.out.println("\n");
@@ -200,7 +200,7 @@ public class Main {
                                         ConvertirXML.convertirVentas();
                                     }
                                 } catch (IOException e) {
-                                    e.printStackTrace();
+                                    System.out.println("\nError\n");
                                 }
                                 System.out.println("\n");
                                 break;

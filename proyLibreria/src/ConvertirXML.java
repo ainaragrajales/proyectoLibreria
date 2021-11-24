@@ -26,6 +26,7 @@ public class ConvertirXML {
             //cambiar de nombre a las etiquetas XML
             xstream.alias("ListaLibrosLibreria", ListaLibros.class);
             xstream.alias("DatosLibro", Libro.class);
+
             //quitar etiwueta lista (atributo de la clase ListaPersonas)
             xstream.addImplicitCollection(ListaLibros.class, "lista");
             //Insrtar los objetos en el XML
