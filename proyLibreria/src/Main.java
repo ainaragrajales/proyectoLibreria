@@ -3,6 +3,21 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
+        String menuInicio = "Menú:\n" +
+                "   1.- Trabajar con ficheros (primer proyecto)\n" +
+                "   2.- Trabajar con bd exist.\n" +
+                "   3.- Salir.\n" +
+                "Opción:";
+        String menuExist = "Menú bd:\n" +
+                "   1.- Crear colección Libreria.\n" +
+                "   2.- Cargar colección en bd.\n" +
+                "   3.- Consultas.\n" +
+                "   4.- Insertar.\n" +
+                "   5.- Modificar.\n" +
+                "   6.- Eliminar.\n" +
+                "   7.- Listar.\n" +
+                "   8.- Volver al menú inicio.\n" +
+                "Opción:";
         String menuPrincipal = "Menú:\n" +
                 "       1.- Libros.\n" +
                 "       2.- Inventario.\n" +
@@ -152,6 +167,15 @@ public class Main {
                             case 2:
                                 System.out.println("\n");
                                 mostrarInventario.mostrar();
+                                System.out.println("¿Quieres convertir en fichero XML la lista de inventario? s/n");
+                                try {
+                                    respuesta = br.readLine();
+                                    if (respuesta.equalsIgnoreCase("s")){
+                                        ConvertirXML.convertirInventario();
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println("\nError\n");
+                                }
                                 System.out.println("\n");
                                 break;
                             case 3:
