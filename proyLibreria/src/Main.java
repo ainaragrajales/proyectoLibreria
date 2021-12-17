@@ -287,6 +287,9 @@ public class Main {
                             case 2:
                                 System.out.println("Cargar colección");
                                 Cargar.cargarColeccion("listaLibrosXML.xml");
+                                Cargar.cargarColeccion("listaInventarioXML.xml");
+                                Cargar.cargarColeccion("listaVentasXML.xml");
+
                                 break;
                             case 3:
                                 Cargar.consultas();
@@ -396,7 +399,7 @@ public class Main {
                                         int modLib = Integer.parseInt(br.readLine());
                                         Cargar.modificar(opcMod, modLib,codMod);
                                     } else if (opcMod == 2){
-                                        Cargar.listar(opcMod);
+                                        Cargar.listar(3);
                                         System.out.println("Escribe el código de la fila a modificar");
                                         int codMod = Integer.parseInt(br.readLine());
                                         Cargar.modificar(opcMod, 1,codMod);
@@ -441,7 +444,7 @@ public class Main {
                                     System.out.println("Error");
                                 }
                             case 8:
-                                System.out.println("\nSaliendo del programa.");
+                                //System.out.println("\nSaliendo del programa.");
                                 break;
                             default:
                                 System.out.println("Opción no válida");

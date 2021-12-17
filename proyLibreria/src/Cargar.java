@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 public class Cargar {
 
     static String driver = "org.exist.xmldb.DatabaseImpl"; //Driver para eXist
-    static String URI = "xmldb:exist://localhost:8083/exist/xmlrpc/db/PruebasLibreria"; //URI colección
+    static String URI = "xmldb:exist://localhost:8083/exist/xmlrpc/db/Libreria"; //URI colección
     static String usu = "admin"; //Usuario
     static String usuPwd = ""; //Clave
     static Collection col = null;
@@ -24,7 +24,7 @@ public class Cargar {
             DatabaseManager.registerDatabase(database); //Registro del driver
             col = DatabaseManager.getCollection(URIcrear, usu, usuPwd);
             CollectionManagementService cserv = (CollectionManagementService) col.getService("CollectionManagementService", "1.0");
-            cserv.createCollection("PruebasLibreria");
+            cserv.createCollection("Libreria");
             System.out.println("Colección creada");
             col.close();
         } catch (XMLDBException e) {
@@ -72,7 +72,7 @@ public class Cargar {
                 // s1: tipo recurso (en este caso, siempre será XMLResource)
                 res = (XMLResource) col.createResource(nombreXML, "XMLResource");
                 // Elegimos el fichero .xml que queremos añadir a la colección
-                File f = new File("./ficheros/" + nombreXML);
+                File f = new File("./proyLibreria/ficheros/" + nombreXML);
 
                 // Fijamos como contenido ese archivo .xml elegido
                 res.setContent(f);
@@ -96,7 +96,7 @@ public class Cargar {
 
     public static String listarConsultas() {
         String selec = "";
-        File carpeta = new File("./consultas");
+        File carpeta = new File("./proyLibreria/consultas");
         String[] listaFicheros = carpeta.list();
         for (int i = 0; i < listaFicheros.length; i++) {
             System.out.println(i + " --> " + listaFicheros[i]);
@@ -115,7 +115,7 @@ public class Cargar {
 
     public static void ejecutarConsultaFichero(String consul) {
         try {
-            BufferedReader entrada = new BufferedReader(new FileReader(consul));
+            BufferedReader entrada = new BufferedReader(new FileReader("./proyLibreria/consultas"+consul));
             String linea = null;
             StringBuilder stringBuilder = new StringBuilder();
             String salto = System.getProperty("line.separator");
@@ -166,6 +166,8 @@ public class Cargar {
             }
         } catch (XMLDBException e) {
             System.out.println("Error");
+        } catch (NullPointerException e){
+            System.out.println("Error!");
         }
     }
 
@@ -327,7 +329,7 @@ public class Cargar {
                         XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
                         //Consulta para modificar/actualizar un valor --> update value
                         ResourceSet result = servicio.query(
-                                "update value /ListaInventarioLibreria/DatosInventario[cod__lib=" + libro + "]/cantidad with data('" + cant + "') ");
+                                "update value /ListaInventarioLibreria/DatosInventario[cod__lib=" + libro + "]/cantidad with '" + cant + "' ");
 
                         col.close();
                         System.out.println("libro actualizado.");
@@ -389,7 +391,7 @@ public class Cargar {
                         XPathQueryService servicio = (XPathQueryService) col.getService("XPathQueryService", "1.0");
                         //Consulta para borrar un libro --> update delete
                         ResourceSet result = servicio.query(
-                                "update delete /ListaInventarioLibreria/DatosInventario[codigo=" + codLibro + "]");
+                                "update delete /ListaInventarioLibreria/DatosInventario[cod__lib=" + codLibro + "]");
                         col.close();
                         System.out.println("Inventario borrado.");
                     } catch (Exception e) {
