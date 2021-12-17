@@ -1,14 +1,22 @@
 <ListaVentasLibreria>
-  <lista>
-    <DatosVenta>
-      <codigo>1</codigo>
-      <codLibro>23003222</codLibro>
-      <tituloLibro>Hyde and Seek</tituloLibro>
-      <cantidad>1</cantidad>
-      <precio>3.0</precio>
-      <total>3.0</total>
-      <fecha>21-03-1980</fecha>
-      <hora>12:34:12</hora>
-    </DatosVenta>
-  </lista>
+  <DatosVenta>
+    <codigo>1</codigo>
+    <codLibro>23003222</codLibro>
+    <tituloLibro>Hyde and Seek</tituloLibro>
+    <cantidad>1</cantidad>
+    <precio>3.0</precio>
+    <total>3.0</total>
+    <fecha>21-03-1980</fecha>
+    <hora>12:34:12</hora>
+  </DatosVenta>
+  <DatosVenta>
+    <codigo>0</codigo>
+    <codLibro>34078934</codLibro>
+    <tituloLibro>True blue</tituloLibro>
+    <cantidad>2</cantidad>
+    <precio>4.45</precio>
+    <total>8.9</total>
+    <fecha>21-12-2019</fecha>
+    <hora>12:39:20</hora>
+  </DatosVenta>
 </ListaVentasLibreria>

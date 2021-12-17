@@ -23,7 +23,7 @@ public class addInventario {
             hora_mod = br.readLine();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error");
         }
 
         try {
@@ -48,9 +48,9 @@ public class addInventario {
             fileEscribir.close();
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Fichero no encontrado");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error");
         }
     }
 }

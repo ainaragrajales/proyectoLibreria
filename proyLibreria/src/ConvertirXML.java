@@ -60,7 +60,7 @@ public class ConvertirXML {
                 xstream.alias("ListaVentasLibreria", ListaVenta.class);
                 xstream.alias("DatosVenta", Venta.class);
                 //quitar etiwueta lista (atributo de la clase ListaPersonas)
-                xstream.addImplicitCollection(ListaLibros.class, "lista");
+                xstream.addImplicitCollection(ListaVenta.class, "lista");
                 //Insrtar los objetos en el XML
                 xstream.toXML(listaVenta, new FileOutputStream("./proyLibreria/ficheros/listaVentasXML.xml"));
                 System.out.println("Creado fichero XML....");
